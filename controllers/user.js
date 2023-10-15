@@ -6,13 +6,20 @@ const apiKey =
   'Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N';
 
 exports.create = (req, res) => {
-  // Validate request
+  // #swagger.tags = ['Users']
+  // #swagger.summary = 'Create User'
+  // #swagger.description = 'Create a user and insert it into the database'
+  /* #swagger.parameters['user'] = {
+      in: 'body',
+      description: 'The user to be inserted',
+      required: true,
+      schema: { $ref: '#definitions/UserInput'}
+  } */
   if (!req.body.username) {
     res.status(400).send({ message: 'Content can not be empty!' });
     return;
   }
 
-  // Create a user
   const user = new User({
     _id: req.body._id,
     username: req.body.username,
@@ -21,7 +28,6 @@ exports.create = (req, res) => {
     displayName: req.body.displayName,
     accessLevel: req.body.accessLevel
   });
-  // Save user in the database
   user
     .save(user)
     .then((data) => {
@@ -36,6 +42,9 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
+  // #swagger.tags = ['Users']
+  // #swagger.summary = 'Get all users'
+  // #swagger.description = 'Get all users information from the database'
   if (req.header('apiKey') === apiKey) {
     User.find(
       {},
@@ -62,8 +71,10 @@ exports.findAll = (req, res) => {
   }
 };
 
-// Find a single user with an id
 exports.findOne = (req, res) => {
+  // #swagger.tags = ['Users']
+  // #swagger.summary = 'Get a user'
+  // #swagger.description = 'Get a users information from the database'
   const _id = req.params._id;
   if (req.header('apiKey') === apiKey) {
     User.find({ _id: _id })
@@ -84,8 +95,16 @@ exports.findOne = (req, res) => {
   }
 };
 
-// Update a single user by id
 exports.updateOne = async (req, res) => {
+  // #swagger.tags = ['Users']
+  // #swagger.summary = 'Update user'
+  // #swagger.description = 'Update a users information in the database'
+  /* #swagger.parameters['user'] = {
+      in: 'body',
+      description: 'The new information for the user',
+      required: true,
+      schema: { $ref: '#definitions/UserInput'}
+  } */
   const _id = new mongodb.ObjectId(req.params._id);
   const user = {
     username: req.body.username,
@@ -112,9 +131,10 @@ exports.updateOne = async (req, res) => {
   }
 };
 
-
-// Delete a single user by id
 exports.deleteOne = (req, res) => {
+  // #swagger.tags = ['Users']
+  // #swagger.summary = 'Delete user'
+  // #swagger.description = 'Delete a user from the database'
   const _id = req.params._id;
   if (req.header('apiKey') === apiKey) {
     User.deleteOne({ _id: _id })
