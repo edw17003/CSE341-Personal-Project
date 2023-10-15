@@ -62,11 +62,11 @@ Content-Type: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 {
-    "firstName":"any",
-    "lastName":"any",
-    "email":"any",
-    "favoriteColor":"any",
-    "birthday":"any"
+    "username":"any",
+    "password": "any",
+    "email": "any",
+    "displayName": "any",
+    "accessLevel": 1
 }
 
 ### Update user
@@ -76,11 +76,11 @@ Content-Type: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 {
-    "firstName":"Wall",
-    "lastName":"Guy",
-    "email":"idontlikehim@bad.com",
-    "favoriteColor":"Black",
-    "birthday":"05/05/1994"
+    "username":"any",
+    "password": "any",
+    "email": "any",
+    "displayName": "any",
+    "accessLevel": 1
 }
 
 ### Delete user
