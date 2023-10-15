@@ -84,7 +84,7 @@
                     "example": "any"
                   },
                   "accessLevel": {
-                    "example": "any"
+                    "example": 1
                   }
                 }
               }
@@ -185,7 +185,7 @@
                     "example": "any"
                   },
                   "accessLevel": {
-                    "example": "any"
+                    "example": 1
                   }
                 }
               }
@@ -282,7 +282,7 @@
                 "type": "object",
                 "properties": {
                   "type": {
-                    "type": "string",
+                    "type": "integer",
                     "example": "integer"
                   }
                 }
