@@ -1,0 +1,89 @@
+## LOCALHOST
+### Get all users
+GET http://localhost:8080/users/
+accept: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+### Get by ID
+GET http://localhost:8080/users/650fbb561673b72254b95d13
+accept: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+### Create user
+POST http://localhost:8080/users/
+accept: application/json
+Content-Type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+{
+    "username":"any",
+    "password": "any",
+    "email": "any",
+    "displayName": "any",
+    "accessLevel": 1
+}
+
+### Update user
+PUT http://localhost:8080/users/650fbb561673b72254b95d14
+accept: application/json
+Content-Type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+{
+    "username":"anyone",
+    "password": "anywho",
+    "email": "anywhere",
+    "displayName": "anything",
+    "accessLevel": 2
+}
+
+### Delete user
+DELETE http://localhost:8080/users/652235e27fffbd420b206bc9
+accept: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+
+
+## PRODUCTION
+### Get all users
+GET https://cse341-w4.onrender.com/users/
+accept: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+### Get by ID
+GET https://cse341-w4.onrender.com/users/6518ce5a401187567dc74ba7
+accept: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+### Create user
+POST https://cse341-w4.onrender.com/users/
+accept: application/json
+Content-Type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+{
+    "firstName":"any",
+    "lastName":"any",
+    "email":"any",
+    "favoriteColor":"any",
+    "birthday":"any"
+}
+
+### Update user
+PUT https://cse341-w4.onrender.com/users/652239cefff8e5c31741d78e
+accept: application/json
+Content-Type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+{
+    "firstName":"Wall",
+    "lastName":"Guy",
+    "email":"idontlikehim@bad.com",
+    "favoriteColor":"Black",
+    "birthday":"05/05/1994"
+}
+
+### Delete user
+DELETE https://cse341-w4.onrender.com/users/652239cefff8e5c31741d78e
+accept: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
