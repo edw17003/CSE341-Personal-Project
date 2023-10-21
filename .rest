@@ -18,7 +18,7 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
     "username":"any",
     "password": "any",
-    "email": "any",
+    "email": "any@test.com",
     "displayName": "any",
     "accessLevel": 1
 }
@@ -30,15 +30,15 @@ Content-Type: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 {
-    "username":"anyone",
-    "password": "anywho",
-    "email": "anywhere",
-    "displayName": "anything",
+    "username":"any",
+    "password": "any",
+    "email": "anywhere@test.com",
+    "displayName": "any",
     "accessLevel": 2
 }
 
 ### Delete user
-DELETE http://localhost:8080/users/650fbb561673b72254b95d14
+DELETE http://localhost:8080/users/65343c7c0aff38f32fad1e55
 accept: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
@@ -64,7 +64,7 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
     "username":"any",
     "password": "any",
-    "email": "any",
+    "email": "any@test.com",
     "displayName": "any",
     "accessLevel": 1
 }
@@ -78,7 +78,7 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 {
     "username":"any",
     "password": "any",
-    "email": "any",
+    "email": "any@test.com",
     "displayName": "any",
     "accessLevel": 1
 }

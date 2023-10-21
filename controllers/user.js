@@ -142,7 +142,7 @@ exports.deleteOne = (req, res) => {
         if (data.deletedCount) {
           res.send({ message: 'User deleted successfully.' });
         } else {
-          res.status(404).send({ message: 'USer not found with id ' + _id });
+          res.status(404).send({ message: 'User not found with id ' + _id });
         }
       })
       .catch((err) => {
