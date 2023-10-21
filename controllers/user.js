@@ -122,7 +122,7 @@ exports.updateOne = async (req, res) => {
         return res.status(404).send({ message: 'No user found with id ' + _id});
       }
 
-      return res.status(200).json(updatedUser);
+      return res.status(204);
     } catch (err) {
       return res.status(500).send({ message: 'Error updating user: ' + err.message });
     }
