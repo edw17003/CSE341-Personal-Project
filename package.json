@@ -13,11 +13,17 @@
   "author": "Jake Edwards",
   "license": "ISC",
   "dependencies": {
+    "connect-mongo": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.18.2",
+    "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.3",
+    "moment": "^2.29.4",
     "mongoose": "^6.0.14",
     "nodemon": "^2.0.15",
+    "passport": "^0.6.0",
+    "passport-google-oauth20": "^2.0.0",
     "swagger-autogen": "^2.23.6",
     "swagger-ui-express": "^5.0.0"
   }
