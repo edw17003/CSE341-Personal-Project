@@ -2,6 +2,8 @@ const routes = require('express').Router();
 const user = require('./user');
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
+// const Story = require('../models/Story')
+
 routes.use('/', require('./swagger'));
 routes.use('/users', user);
 routes.get('/', ensureGuest, (req, res) => {
@@ -12,10 +14,10 @@ routes.get('/', ensureGuest, (req, res) => {
 
 routes.get('/dashboard', ensureAuth, async (req, res) => {
   try {
-    const stories = await Story.find({ user: req.user.id }).lean()
+    // const stories = await Story.find({ user: req.user.id }).lean()
     res.render('dashboard', {
       name: req.user.firstName,
-      stories,
+      // stories,
     })
   } catch (err) {
     console.error(err)
