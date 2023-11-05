@@ -1,11 +1,12 @@
 const db = require('../models');
 const User = db.users;
 const mongodb = require('mongodb')
+const bcrypt = require('bcrypt');
 
 const apiKey =
   'Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N';
 
-exports.create = (req, res) => {
+exports.create = async (req, res) => {
   // #swagger.tags = ['Users']
   // #swagger.summary = 'Create User'
   // #swagger.description = 'Create a user and insert it into the database'
@@ -20,25 +21,29 @@ exports.create = (req, res) => {
     return;
   }
 
-  const user = new User({
-    _id: req.body._id,
-    username: req.body.username,
-    password: req.body.password,
-    email: req.body.email,
-    displayName: req.body.displayName,
-    accessLevel: req.body.accessLevel
-  });
-  user
-    .save(user)
-    .then((data) => {
-      res.send(data);
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message:
-          err.message || 'An error occurred while creating the user.',
-      });
+  try {
+    // Hash the user's password
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
+    console.log(hashedPassword)
+
+    // Create the user with the hashed password
+    const user = new User({
+      _id: req.body._id,
+      username: req.body.username,
+      password: hashedPassword, // Store the hashed password
+      email: req.body.email,
+      displayName: req.body.displayName,
+      accessLevel: req.body.accessLevel,
     });
+
+    const data = await user.save();
+    res.send(data);
+  } catch (err) {
+    res.status(500).send({
+      message: err.message || 'An error occurred while creating the user.',
+    });
+  }
 };
 
 exports.findAll = (req, res) => {

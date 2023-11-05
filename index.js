@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv')
 const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const exphbs = require('express-handlebars')
@@ -30,16 +29,6 @@ const app = express();
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cors())
-
-// app.use(
-//   methodOverride(function (req, res) {
-//     if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-//       let method = req.body._method
-//       delete req.body._method
-//       return method
-//     }
-//   })
-// )
 
 app.use(session({ 
     secret: 'test', 
@@ -80,7 +69,6 @@ app.use(passport.session());
 // Routes
 app.use('/', require('./routes'))
 app.use('/auth', require('./routes/auth'))
-// app.use('/stories', require('./routes/stories'))
 
 const PORT = process.env.PORT || 8080;
 
