@@ -1,6 +1,7 @@
 const routes = require('express').Router();
 const user = require('./user');
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
+const fetch = require('node-fetch');
 
 // const Story = require('../models/Story')
 
