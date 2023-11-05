@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const OAuthUserSchema = new mongoose.Schema({
   googleId: {
@@ -24,6 +24,6 @@ const OAuthUserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-})
+});
 
-module.exports = mongoose.model('OAuthUser', OAuthUserSchema)
+module.exports = mongoose.model('OAuthUser', OAuthUserSchema, 'oauth');

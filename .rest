@@ -93,3 +93,74 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
 DELETE https://cse341-personalproject-nnod.onrender.com/users/652239cefff8e5c31741d78e
 accept: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+
+## LOCALHOST
+### Get all cakes
+GET http://localhost:8080/cakes/
+accept: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+### Get cake by ID
+GET http://localhost:8080/cakes/6547286b31102b54ad22de84
+accept: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+### Create cake
+POST http://localhost:8080/cakes/
+accept: application/json
+Content-Type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+{
+    "name": "Delicious Cake",
+    "flavor": "Strawberry",
+    "theme": "Birthday",
+    "description": "A tasty cake with frosting",
+    "filling": "Chocolate",
+    "deliveryDate": "2023-10-31"
+}
+
+### Update cake
+PUT http://localhost:8080/cakes/6547286b31102b54ad22de84
+accept: application/json
+Content-Type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+{
+    "name": "Updated Cake",
+    "theme": "Anniversary",
+    "description": "A modified cake with special decorations",
+    "filling": "Vanilla",
+    "deliveryDate": "2023-11-15"
+}
+
+### Delete cake
+DELETE http://localhost:8080/cakes/6547286b31102b54ad22de84
+accept: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+## PRODUCTION
+### Get all cakes
+GET https://cse341-personalproject-nnod.onrender.com/cakes/
+accept: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+### Get cake by ID
+GET https://cse341-personalproject-nnod.onrender.com/cakes/6518ce5a401187567dc74ba7
+accept: application.json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+### Create cake
+POST https://cse341-personalproject-nnod.onrender.com/cakes/
+accept: application/json
+Content-Type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+{
+    "name": "Special Occasion Cake",
+    "theme": "Celebration",
+    "description": "A cake for special occasions",
+    "filling": "Strawberry",
+    "deliveryDate": "2023-12-31"
+}

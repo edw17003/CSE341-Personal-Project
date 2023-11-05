@@ -7,5 +7,6 @@ const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
 db.users = require('./users.js')(mongoose);
+db.cakes = require('./cake.js')(mongoose);
 
 module.exports = db;
