@@ -5,7 +5,7 @@ accept: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 ### Get by ID
-GET http://localhost:8080/users/650fbb561673b72254b95d13
+GET http://localhost:8080/users/654716895c6838f5b30a4044
 accept: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
@@ -20,11 +20,13 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
     "password": "any",
     "email": "any@test.com",
     "displayName": "any",
-    "accessLevel": 1
+    "accessLevel": 1,
+    "dateOfBirth": "2023-01-01",
+    "phoneNumber": "1234567890"
 }
 
 ### Update user
-PUT http://localhost:8080/users/650fbb561673b72254b95d14
+PUT http://localhost:8080/users/652b639e172a8ae4567f46e0
 accept: application/json
 Content-Type: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
@@ -34,15 +36,15 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
     "password": "any",
     "email": "anywhere@test.com",
     "displayName": "any",
-    "accessLevel": 2
+    "accessLevel": 2,
+    "dateOfBirth": "2023-02-01",
+    "phoneNumber": "9876543210"
 }
 
 ### Delete user
-DELETE http://localhost:8080/users/65343c7c0aff38f32fad1e55
+DELETE http://localhost:8080/users/6546db4ba2143182e3d56110
 accept: application/json
 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
-
-
 
 ## PRODUCTION
 ### Get all users
@@ -66,7 +68,9 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
     "password": "any",
     "email": "any@test.com",
     "displayName": "any",
-    "accessLevel": 1
+    "accessLevel": 1,
+    "dateOfBirth": "2023-01-01",
+    "phoneNumber": "1234567890"
 }
 
 ### Update user
@@ -80,7 +84,9 @@ apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRll
     "password": "any",
     "email": "any@test.com",
     "displayName": "any",
-    "accessLevel": 1
+    "accessLevel": 1,
+    "dateOfBirth": "2023-02-01",
+    "phoneNumber": "9876543210"
 }
 
 ### Delete user

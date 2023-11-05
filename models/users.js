@@ -31,6 +31,25 @@ module.exports = (mongoose) => {
           min: [1, 'Access level must be greater than 1'], 
           max: [5, 'Access level cannot be greater than 5']
         },
+        dateOfBirth: {
+          type: Date,
+          validate: {
+            validator: function (value) {
+              return value <= new Date();
+            },
+            message: 'Date of birth must be in the past',
+          },
+        },
+        phoneNumber: {
+          type: String,
+          validate: {
+            validator: function (value) {
+              const phoneRegex = /^\d{10}$/;
+              return phoneRegex.test(value);
+            },
+            message: 'Invalid phone number format (e.g., 1234567890)',
+          },
+        },
       }
     )
   );

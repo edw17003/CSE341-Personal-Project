@@ -1,6 +1,6 @@
 const db = require('../models');
 const User = db.users;
-const mongodb = require('mongodb')
+const mongodb = require('mongodb');
 const bcrypt = require('bcrypt');
 
 const apiKey =
@@ -14,7 +14,7 @@ exports.create = async (req, res) => {
       in: 'body',
       description: 'The user to be inserted',
       required: true,
-      schema: { $ref: '#definitions/UserInput'}
+      schema: { $ref: '#definitions/UserInput' }
   } */
   if (!req.body.username) {
     res.status(400).send({ message: 'Content can not be empty!' });
@@ -22,19 +22,19 @@ exports.create = async (req, res) => {
   }
 
   try {
-    // Hash the user's password
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
-    console.log(hashedPassword)
+    console.log(hashedPassword);
 
-    // Create the user with the hashed password
     const user = new User({
       _id: req.body._id,
       username: req.body.username,
-      password: hashedPassword, // Store the hashed password
+      password: hashedPassword,
       email: req.body.email,
       displayName: req.body.displayName,
       accessLevel: req.body.accessLevel,
+      dateOfBirth: req.body.dateOfBirth,
+      phoneNumber: req.body.phoneNumber,
     });
 
     const data = await user.save();
@@ -59,7 +59,9 @@ exports.findAll = (req, res) => {
         password: 1,
         email: 1,
         displayName: 1,
-        accessLevel: 1
+        accessLevel: 1,
+        dateOfBirth: 1,
+        phoneNumber: 1,
       }
     )
       .then((data) => {
@@ -79,7 +81,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   // #swagger.tags = ['Users']
   // #swagger.summary = 'Get a user'
-  // #swagger.description = 'Get a users information from the database'
+  // #swagger.description = 'Get a user's information from the database'
   const _id = req.params._id;
   if (req.header('apiKey') === apiKey) {
     User.find({ _id: _id })
@@ -103,12 +105,12 @@ exports.findOne = (req, res) => {
 exports.updateOne = async (req, res) => {
   // #swagger.tags = ['Users']
   // #swagger.summary = 'Update user'
-  // #swagger.description = 'Update a users information in the database'
+  // #swagger.description = 'Update a user's information in the database'
   /* #swagger.parameters['user'] = {
       in: 'body',
       description: 'The new information for the user',
       required: true,
-      schema: { $ref: '#definitions/UserInput'}
+      schema: { $ref: '#definitions/UserInput' }
   } */
   const _id = new mongodb.ObjectId(req.params._id);
   const user = {
@@ -116,7 +118,9 @@ exports.updateOne = async (req, res) => {
     password: req.body.password,
     email: req.body.email,
     displayName: req.body.displayName,
-    accessLevel: req.body.accessLevel
+    accessLevel: req.body.accessLevel,
+    dateOfBirth: req.body.dateOfBirth,
+    phoneNumber: req.body.phoneNumber,
   };
 
   if (req.header('apiKey') === apiKey) {
