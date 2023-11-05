@@ -20,13 +20,10 @@ routes.get('/dashboard', ensureAuth, async (req, res) => {
     };
 
     const response = await axios.get(apiUrl, { headers });
-    const users = response.data;
-    const adminUsers = users.filter(user => user.googleId);
-    const allUsers = users.filter(user => user.username);
+    const allUsers = response.data;
 
     res.render('dashboard', {
       name: req.user.firstName,
-      adminUsers,
       allUsers
     });
   } catch (err) {
