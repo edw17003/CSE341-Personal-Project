@@ -71,10 +71,10 @@
                   "username": {
                     "example": "any"
                   },
-                  "_id": {
+                  "password": {
                     "example": "any"
                   },
-                  "password": {
+                  "_id": {
                     "example": "any"
                   },
                   "email": {
@@ -84,6 +84,12 @@
                     "example": "any"
                   },
                   "accessLevel": {
+                    "example": "any"
+                  },
+                  "dateOfBirth": {
+                    "example": "any"
+                  },
+                  "phoneNumber": {
                     "example": "any"
                   }
                 }
@@ -99,7 +105,238 @@
           "Users"
         ],
         "summary": "Get a user",
-        "description": "Get a users information from the database",
+        "description": "Get a user",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "body",
+            "description": "The new information for the user",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UserInput"
+            }
+          },
+          {
+            "name": "apiKey",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Update user",
+        "description": "Update a user",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "apiKey",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "example": "any"
+                  },
+                  "password": {
+                    "example": "any"
+                  },
+                  "email": {
+                    "example": "any"
+                  },
+                  "displayName": {
+                    "example": "any"
+                  },
+                  "accessLevel": {
+                    "example": "any"
+                  },
+                  "dateOfBirth": {
+                    "example": "any"
+                  },
+                  "phoneNumber": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Delete user",
+        "description": "Delete a user from the database",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "apiKey",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/cakes/": {
+      "get": {
+        "tags": [
+          "Cakes"
+        ],
+        "summary": "Get all cakes",
+        "description": "Get all cake information from the database",
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Cakes"
+        ],
+        "summary": "Create Cake",
+        "description": "Create a cake and insert it into the database",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "any"
+                  },
+                  "theme": {
+                    "example": "any"
+                  },
+                  "deliveryDate": {
+                    "example": "any"
+                  },
+                  "filling": {
+                    "example": "any"
+                  },
+                  "flavor": {
+                    "example": "any"
+                  },
+                  "description": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cakes/{_id}": {
+      "get": {
+        "tags": [
+          "Cakes"
+        ],
+        "summary": "Get a cake by ID",
+        "description": "Get cake information by ID from the database",
         "parameters": [
           {
             "name": "_id",
@@ -131,10 +368,10 @@
       },
       "put": {
         "tags": [
-          "Users"
+          "Cakes"
         ],
-        "summary": "Update user",
-        "description": "Update a users information in the database",
+        "summary": "Update cake",
+        "description": "Update cake information in the database",
         "parameters": [
           {
             "name": "_id",
@@ -172,19 +409,22 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "username": {
+                  "name": {
                     "example": "any"
                   },
-                  "password": {
+                  "flavor": {
                     "example": "any"
                   },
-                  "email": {
+                  "theme": {
                     "example": "any"
                   },
-                  "displayName": {
+                  "description": {
                     "example": "any"
                   },
-                  "accessLevel": {
+                  "deliveryDate": {
+                    "example": "any"
+                  },
+                  "filling": {
                     "example": "any"
                   }
                 }
@@ -195,10 +435,10 @@
       },
       "delete": {
         "tags": [
-          "Users"
+          "Cakes"
         ],
-        "summary": "Delete user",
-        "description": "Delete a user from the database",
+        "summary": "Delete cake",
+        "description": "Delete a cake from the database",
         "parameters": [
           {
             "name": "_id",
